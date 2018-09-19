@@ -1,0 +1,23 @@
+<!-- <div class="form-student mt-5">
+    <form>
+        <div class="row mb-2">
+            <input type="text" class="form-control" placeholder="First name" #form>
+        </div>
+        <div class="row mb-2">
+            <input type="text" class="form-control" placeholder="age" #form>
+        </div>
+        <button type="button" class="row btn btn-secondary btn-sm" (click)="doAction(form.value)">Valider</button>
+    </form>
+</div> -->
+
+<div class="form-student mt-5">
+    <form [formGroup]="formGroupStudent">
+        <div class="row mb-2">
+            <input type="text" class="form-control" placeholder="First name" formControlName="firstname">
+        </div>
+        <div class="row mb-2">
+            <input type="text" class="form-control" placeholder="age" formControlName="age">
+        </div>
+        <button type="button" class="row btn btn-secondary btn-sm" (click)="doAction()">Valider</button>
+    </form>
+</div>

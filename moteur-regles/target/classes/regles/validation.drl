@@ -1,0 +1,15 @@
+import fr.poc.mdr.model.User;
+
+rule "MAX_LENGTH_FIRSTNAME"
+	when
+		$user: User(firstname.length < 6)
+	then
+		$user.addAnomalie("firstname", "Le nombre de caractère est superieur à 6");
+	end
+	
+rule "MIN_AGE"
+	when
+		$user: User(age < 18) 
+	then
+		$user.addAnomalie("age", "Tu n'es pas majeur");
+	end
